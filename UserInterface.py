@@ -1,17 +1,22 @@
+#User Files
+import teamcoolinfo as ci
+import weatherDisplay as weather
+import flightDisplay as flight
+import tripadvisorScrap as hotel
+
+#Packages
 import csv
 import pandas as pd
 import sys
-import teamcoolinfo as ci
-import weatherDisplay as weather
-import tripadvisorScrap as hotel
-from datetime import datetime
+from datetime import datetime,timedelta
 from time import time
 from lxml import html,etree
 import requests,re
 import os,sys
 import unicodecsv as csv
 import argparse
-
+from selenium import webdriver
+from random import randint
 
 def read_csv():
     with open('TicketInfo.csv') as ticket_csv:
@@ -138,8 +143,8 @@ def user_interface(ticket_df, team, team_print):
                             choice_of_operation = int(input("Enter your choice here: "))
                             if choice_of_operation == 1:
                                 weather.weatherInfo(match["Date"],match["City"])
-                            # elif choice_of_operation == 2:
-                            #     flightInfo(match["City"], match["State"], match["Date"])
+                            elif choice_of_operation == 2:
+                                flight.flightDisplay(match["City"], match["Date"])
                             elif choice_of_operation == 3:
                                 hotel.hotel_scrap(match["City"])
                               elif choice_of_operation == 4:
