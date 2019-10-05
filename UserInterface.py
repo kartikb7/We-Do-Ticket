@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import sys
 import teamcoolinfo as ci
+import weatherDisplay as weather
 
 def read_csv():
     with open('TicketInfo.csv') as ticket_csv:
@@ -127,8 +128,7 @@ def user_interface(ticket_df, team, team_print):
                             print("Input -2 to go back to team selection")
                             choice_of_operation = int(input("Enter your choice here: "))
                             if choice_of_operation == 1:
-                                weatherInfo(match["Date"],match["City"])
-                                break
+                                weather.weatherInfo(match["Date"],match["City"])
                             # elif choice_of_operation == 2:
                             #     flightInfo(match["City"], match["State"], match["Date"])
                             # elif choice_of_operation == 3:
@@ -166,13 +166,6 @@ def user_interface(ticket_df, team, team_print):
             print()
             choice_of_team == 9999
 
-
-def weatherInfo(Date,City):
-    completeWeatherDataClean= pd.read_csv('completeWeatherDataClean.csv')
-    print(Date)
-    print(City)
-    cityWeather = completeWeatherDataClean[completeWeatherDataClean.City==City.lower()]
-    print(cityWeather[cityWeather.Date==str(datetime.strptime(Date, '%Y/%m/%d').strftime('%m-%d-%Y'))])
 
 ticket_df = read_csv()
 team, team_print = create_team(ticket_df)
