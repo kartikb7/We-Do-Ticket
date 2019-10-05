@@ -3,6 +3,15 @@ import pandas as pd
 import sys
 import teamcoolinfo as ci
 import weatherDisplay as weather
+import tripadvisorScrap as hotel
+from datetime import datetime
+from time import time
+from lxml import html,etree
+import requests,re
+import os,sys
+import unicodecsv as csv
+import argparse
+
 
 def read_csv():
     with open('TicketInfo.csv') as ticket_csv:
@@ -131,8 +140,8 @@ def user_interface(ticket_df, team, team_print):
                                 weather.weatherInfo(match["Date"],match["City"])
                             # elif choice_of_operation == 2:
                             #     flightInfo(match["City"], match["State"], match["Date"])
-                            # elif choice_of_operation == 3:
-                            #     hotelInfo(match["City"], match["State"], match["Date"])
+                            elif choice_of_operation == 3:
+                                hotel.hotel_scrap(match["City"])
                               elif choice_of_operation == 4:
                                  ci.performanceInfo(team_name)
                             if choice_of_operation == -2:
