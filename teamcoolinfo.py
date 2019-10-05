@@ -5,11 +5,11 @@ Created on Thu Oct  3 17:11:48 2019
 @author: Cyndi Wang
 """
 import historyscoredf as s
+
 import pandas as pd
 pd.set_option('display.max_columns', None)
-teamofinterest=input("which team are you interested in?")
 
-selectteaminfo=s.scoredffinal[s.scoredffinal["team"]==teamofinterest]
+selectteaminfo=s.scoredffinal[s.scoredffinal["team"]==team_name]
 totalmatches=len(selectteaminfo)
 totalwins=len(selectteaminfo[selectteaminfo["result"]=="Win"])
 totalloses=len(selectteaminfo[selectteaminfo["result"]=="Lose"])
