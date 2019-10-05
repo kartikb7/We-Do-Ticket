@@ -133,7 +133,7 @@ def user_interface(ticket_df, team, team_print):
                             # elif choice_of_operation == 3:
                             #     hotelInfo(match["City"], match["State"], match["Date"])
                             # elif choice_of_operation == 4:
-                            #     performanceInfo(match["Guest Team"], match["Host Team"])
+                            #     performanceInfo(team_name)
                             if choice_of_operation == -2:
                                 choice_of_match = -2
                                 choice_of_team = 9999
