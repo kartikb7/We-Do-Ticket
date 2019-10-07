@@ -59,7 +59,7 @@ def user_interface(ticket_df, team, team_print):
     choice_of_team = 9999
     # enter in the loop which allows user to select team they are interested in
     while choice_of_team != -1:
-        try:
+#        try:
             print()
             print(team_print)
             print("Choose your favorite team and I will show their up-coming matches (input an integer only)")
@@ -85,7 +85,7 @@ def user_interface(ticket_df, team, team_print):
 
             # create loop which allows user to select the match
             while choice_of_match != -2:
-                try:
+#                try:
                     print()
                     print("Here displays all matches of " + team_name)
                     print("{:<3}{:<50s}{:<15}{:<10}{:<30s}{:<20}{:<10}{:<10}".format("", "Match Info", "Date", "Time",
@@ -137,7 +137,7 @@ def user_interface(ticket_df, team, team_print):
                     choice_of_operation = 9999
                     # create a loop to for user to choose operation on selected match
                     while choice_of_operation != 0:
-                        try:
+#                        try:
                             print()
                             # display detailed info about the match
                             print("Here is detailed information of " + match["Match Info"] + " on " + match["Date"])
@@ -171,9 +171,13 @@ def user_interface(ticket_df, team, team_print):
                                 input("Press enter to continue")
                             # hotel info option
                             elif choice_of_operation == 3:
-                                hotel.hotel_scrap(match["City"])
-                                hotel.hotel_visual()
+                                try:
+                                    hotel.hotel_scrap(match["City"])
+                                    hotel.hotel_visual()
+                                except:
+                                    print("There is no information on TripAdvisor.com of "+match["City"])
                                 input("Press enter to continue")
+                                
                             # past performance option
                             elif choice_of_operation == 4:
                                 ci.performanceInfo(team_name)
@@ -195,24 +199,24 @@ def user_interface(ticket_df, team, team_print):
                             elif not 0 < choice_of_operation <= 4:
                                 x = 1/0
                         # exception handling
-                        except:
-                            print()
-                            print("Incorrect operation input")
-                            input("Press enter to continue")
-                            print()
-                            choice_of_operation = 9999
-                except:
-                    print()
-                    print("Incorrect match input")
-                    input("Input anything to continue")
-                    print()
-                    choice_of_match = 9999
-        except:
-            print()
-            print("Incorrect team input")
-            input("Press enter to continue")
-            print()
-            choice_of_team == 9999
+#                        except:
+#                            print()
+#                            print("Incorrect operation input")
+#                            input("Press enter to continue")
+#                            print()
+#                            choice_of_operation = 9999
+#                except:
+#                    print()
+#                    print("Incorrect match input")
+#                    input("Input anything to continue")
+#                    print()
+#                    choice_of_match = 9999
+#        except:
+#            print()
+#            print("Incorrect team input")
+#            input("Press enter to continue")
+#            print()
+#            choice_of_team == 9999
 
 
 # main program
