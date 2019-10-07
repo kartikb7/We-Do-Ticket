@@ -12,8 +12,6 @@ from bs4 import BeautifulSoup
 import re
 from time import sleep
 
-City = 'Los Angeles'
-Date = '2019/10/13'
 def flightDisplay(City,Date):
     # Defining all the city airport codes in the scope of this application
     city_Codes = {'atlanta':'ATL',
