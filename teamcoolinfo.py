@@ -21,8 +21,8 @@ def performanceInfo(team_name):
 
     print("\n\nSome Cool information")
     print("**************************")
-    print("\nIn year 2018 and year 2019, the performance statistics of "+teamofinterest+" is as follows: \n")
-    print("For "+str(totalmatches)+" matches "+teamofinterest+ " was in:")
+    print("\nIn year 2018 and year 2019, the performance statistics of "+team_name+" is as follows: \n")
+    print("For "+str(totalmatches)+" matches "+team_name+ " was in:")
     print("Wins: "+str(totalwins))
     print("Wins%: "+str(100*totalwins/totalmatches)+"%")
     print("Loses: "+str(totalloses))
