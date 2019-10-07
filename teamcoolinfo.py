@@ -43,7 +43,7 @@ def performanceInfo(team_name):
 
     print("\n\nDetailed Match information")
     print("**************************")
-    print(selectteaminfo.iloc[:,1:])
+    print(selectteaminfo.iloc[:,1:].to_string(index=False))
 
 
 
