@@ -198,6 +198,7 @@ def user_interface(ticket_df, team, team_print):
                         except:
                             print()
                             print("Incorrect operation input")
+                            input("Input anything to continue")
                             print()
                             choice_of_operation = 9999
                 except:
