@@ -14,6 +14,8 @@ for i in range(1,5): #2019regularweek4
     url_list.append('https://www.footballdb.com/scores/index.html?lg=NFL&yr=2019&type=reg&wk='+str(i))
 for i in range(1,6): #2019preweek5
     url_list.append('https://www.footballdb.com/scores/index.html?lg=NFL&yr=2019&type=pre&wk='+str(i))
+for i in range(1,5): #2018postweek4
+    url_list.append('https://www.footballdb.com/scores/index.html?lg=NFL&yr=2018&type=post&wk='+str(i))
 for i in range(1,18): #2018 regularweek17
     url_list.append('https://www.footballdb.com/scores/index.html?lg=NFL&yr=2018&type=reg&wk='+str(i))
 for i in range(1,6):#2018 preweek5
