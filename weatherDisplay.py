@@ -22,7 +22,10 @@ def weatherInfo(Date,City):
     # Creating date variables for 3 days before and after the game
     weatherDates = []
     weatherDates.append((datetime.strptime(Date, '%Y/%m/%d')- timedelta(days=3)).strftime('%m-%d-%Y'))
-    weatherDates.append((datetime.strptime(Date, '%Y/%m/%d')+ timedelta(days=3)).strftime('%m-%d-%Y'))
+    if Date<'12-28-2019':
+        weatherDates.append((datetime.strptime(Date, '%Y/%m/%d')+ timedelta(days=3)).strftime('%m-%d-%Y'))
+    else:
+        weatherDates.append('12-31-2019')
     
     # Plotting the temperature for the week
     plt.figure(figsize=(9,6))
