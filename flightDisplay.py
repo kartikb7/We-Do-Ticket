@@ -35,7 +35,7 @@ def flightDisplay(City,Date):
     'new orleans':'MSY',
     'oakland':'OAK',
     'philadelphia':'PHL',
-#    'pittsburgh':'PIT',
+    'pittsburgh':'PIT',
     'seattle':'SEA',
     'tampa':'TPA',
 #    'arlington':'',
