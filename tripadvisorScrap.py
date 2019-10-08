@@ -126,6 +126,7 @@ def hotel_scrap(MatchCity):
 
 
 
+
 def hotel_visual():
     input_file=open("tripadvisor_data.csv")
     output_file=open("tripadvisor_data_sorted.csv","w")
@@ -145,10 +146,11 @@ def hotel_visual():
         row=[','.join(row)]
     f2=pd.DataFrame(table_sorted,columns=header.split(","))
     # print(f2.iloc[:,[0,3,4,7]])
-    print('\033[1;31m Ten Cheapest Hotels\033[0m')
+    print('\033[1;31m Top Cheapest Hotels\033[0m')
     x = PrettyTable()
     x.field_names = ["hotel_name", "reviews", "tripadvisor_rating", "price_per_night"]
-    for i in range(10):
+    hotelCount = len(table_sorted) if len(table_sorted)<10 else 10
+    for i in range(hotelCount):
         list_hotel=[]
         list_hotel.append(table_sorted[i][0])
         list_hotel.append(table_sorted[i][3])
@@ -159,36 +161,37 @@ def hotel_visual():
     print(x)
     
     #Ten Most Popular Hotels (most people reviewed)
-    input_file=open("tripadvisor_data.csv")
-    output_file=open("tripadvisor_data_sorted.csv","w")
-    
-    table=[]
-    header=input_file.readline()
-    for line in input_file:
-        col=line.split(",")
-        col[3]=float(col[3])
-        table.append(col)
-    table_sorted=sorted(table,key=itemgetter(3),reverse=True)
-    output_file.write(header)
-    input_file.close()
-    output_file.close()
-    for row in table_sorted:
-        row=[str(x) for x in row]
-        row=[','.join(row)]
-    f2=pd.DataFrame(table_sorted,columns=header.split(","))
-    # print(f2.iloc[:,[0,3,4,7]])
-    print('\033[1;31m Ten Most Popular Hotels (most people reviewed)\033[0m')
-    x = PrettyTable()
-    x.field_names = ["hotel_name", "reviews", "tripadvisor_rating", "price_per_night"]
-    for i in range(10):
-        list_hotel=[]
-        list_hotel.append(table_sorted[i][0])
-        list_hotel.append(table_sorted[i][3])
-        list_hotel.append(table_sorted[i][4])
-        list_hotel.append(table_sorted[i][7])
-        x.add_row(list_hotel)
-    
-    print(x)
+#    input_file=open("tripadvisor_data.csv")
+#    output_file=open("tripadvisor_data_sorted.csv","w")
+#    
+#    table=[]
+#    header=input_file.readline()
+#    for line in input_file:
+#        col=line.split(",")
+#        col[3]=float(col[3])
+#        table.append(col)
+#    table_sorted=sorted(table,key=itemgetter(3),reverse=True)
+#    output_file.write(header)
+#    input_file.close()
+#    output_file.close()
+#    for row in table_sorted:
+#        row=[str(x) for x in row]
+#        row=[','.join(row)]
+#    f2=pd.DataFrame(table_sorted,columns=header.split(","))
+#    # print(f2.iloc[:,[0,3,4,7]])
+#    print('\033[1;31m Ten Most Popular Hotels (most people reviewed)\033[0m')
+#    x = PrettyTable()
+#    x.field_names = ["hotel_name", "reviews", "tripadvisor_rating", "price_per_night"]
+#    hotelCount = len(table_sorted) if len(table_sorted)<10 else 10
+#    for i in range(hotelCount):
+#        list_hotel=[]
+#        list_hotel.append(table_sorted[i][0])
+#        list_hotel.append(table_sorted[i][3])
+#        list_hotel.append(table_sorted[i][4])
+#        list_hotel.append(table_sorted[i][7])
+#        x.add_row(list_hotel)
+#    
+#    print(x)
     
     #Ten Hotels with Most highest Rating
     input_file=open("tripadvisor_data.csv")
@@ -209,10 +212,11 @@ def hotel_visual():
         row=[','.join(row)]
     f2=pd.DataFrame(table_sorted,columns=header.split(","))
     # print(f2.iloc[:,[0,3,4,7]])
-    print('\033[1;31m Ten Hotels with Most highest Rating\033[0m')
+    print('\033[1;31m Top Hotels with Most highest Rating\033[0m')
     x = PrettyTable()
     x.field_names = ["hotel_name", "reviews", "tripadvisor_rating", "price_per_night"]
-    for i in range(10):
+    hotelCount = len(table_sorted) if len(table_sorted)<10 else 10
+    for i in range(hotelCount):
         list_hotel=[]
         list_hotel.append(table_sorted[i][0])
         list_hotel.append(table_sorted[i][3])
