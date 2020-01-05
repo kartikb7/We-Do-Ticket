@@ -89,10 +89,9 @@ https://www.youtube.com/watch?v=siH1qrKyBBs&feature=youtu.be
 
 Part 4 - Group Members Information
 Our group is made up by 4 students.
-No.	Name	E-mail
-1	Kartik Bansal
-2	Cyndi Wang
-3	Honda Zhang
-4	Georgia Fu
+1	Kartik Bansal<br>
+2	Cyndi Wang<br>
+3	Honda Zhang<br>
+4	Georgia Fu<br>
 
 
