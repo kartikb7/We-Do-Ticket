@@ -1,6 +1,20 @@
 # We-Do-Ticket
 
-Part 1 - Module Installation and Browser Requirement
+## Vision
+Provide fans with an informative one-stop platform for football matches 
+
+## Features
+Once user enters a team name, our program will give different options to choose from and later display different information regarding the team:
+<br>1. Ticket
+<br>2. Weather
+<br>3. Flight
+<br>4. Hotel
+<br>5. Past Performance
+
+## Approach
+Using BeautifulSoup4 and Selenium scrape historical data and real-time data to show the above information
+
+## Module Installation and Browser Requirement
 1.	Module Installation: PrettyTable
 a.	Download prettyTable file from https://pypi.org/project/PrettyTable/
 b.	Use cmd to input “pip install prettytable”
@@ -17,7 +31,7 @@ Pandas and Bs4
 If you are using Google Chrome with a version below 77, the flight scraping functionality will not work. The chromedriver is compatible with the latest version of chrome i.e. 77. To check the version of your chrome or update it, inside chrome menu click “ Help ---> About Google Chrome ”.
  
 
-Part 2 - Usage Instructions
+## Usage Instructions
 1.	Download and Run File
 Download zip file, extract it, open and run < UserInterface.py> 
  
@@ -82,12 +96,12 @@ After press enter key, the program back to the menu interface that can:
 The program continues to loop until the user choose to quit the program.
 
  
-Part 3 - Video
+## Video
 Link of the video demonstrating our project being run is below:
 https://www.youtube.com/watch?v=siH1qrKyBBs&feature=youtu.be 
 
 
-Part 4 - Group Members Information
+## Group Members Information
 Our group is made up by 4 students.<br>
 1	Kartik Bansal<br>
 2	Cyndi Wang<br>
